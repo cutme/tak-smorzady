@@ -1,0 +1,56 @@
+.o-accordion {
+    
+    li {
+        @extend %rel;
+        cursor: pointer;
+        
+        & > div {
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            
+            section {
+                padding: 20px 60px;
+            }
+        }
+        
+        h4 {
+            @extend %rel;
+            
+            &:after {
+                @extend %abs;
+                @extend %abs-y;
+                @extend %anim;
+                right: 50px; 
+                line-height: 1;
+                font: {
+                    family: $icomoon;
+                    size: rem(30);
+                }
+                content: "\e900";
+                color: $c-red-02;
+            }
+        }
+        
+        &.is-rollout {
+            
+            h4 {
+                &:after {
+                    opacity: 1;
+                    transform: scaleY(-1) translateY(50%);
+                }
+            }
+            
+            .o-lead {
+                &--2 {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+    
+    
+
+
+}
+

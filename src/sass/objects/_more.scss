@@ -1,0 +1,15 @@
+.o-more {
+    @extend %lead--4;
+    text-decoration: underline;
+    font-size: rem(20);
+    
+    &:after {
+        content: '>';
+    }
+    
+    &:hover {
+        .desktop & {
+            text-decoration: none;
+        }
+    }
+}

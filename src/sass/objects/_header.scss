@@ -1,0 +1,9 @@
+.o-header {
+    h2 {
+       @extend %lead--1;
+       display: inline-block;
+       border-bottom: 1px solid $c-red-01;
+       margin-bottom: 1em;
+       padding-bottom: 1em;
+    }
+}

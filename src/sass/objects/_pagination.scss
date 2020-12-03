@@ -1,0 +1,33 @@
+.o-pagination {
+    padding: 100px 0;
+
+    ul {
+        @extend %flex;
+        @extend %flex-x;
+    }
+    
+    li {
+        background-color: white;
+        margin: 0 5px;
+        color: $c-red-02;
+        
+        &.is-active {
+            a {
+                background-color: $c-red-01;
+                color: white;
+            }
+        }
+    }
+    
+    a {
+        @extend %flex;
+        @extend %flex-xy;
+        width: 40px; height: 40px;
+        background-color: $c-gray-02;
+        font-weight: $medium;
+        
+        &:hover {
+            background-color: $c-gray-01;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.c-members {
+    
+    figure {
+        width: 228px;
+        margin-bottom: 40px;
+        
+        img {
+            border: 4px solid $c-red-01;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            padding: 8px;
+        }
+    }
+    
+    figcaption {
+        text-align: center;
+
+        p {
+            @extend %lead--4;
+            
+            & + p {
+                font-weight: $light;
+            }
+        }
+    }
+}

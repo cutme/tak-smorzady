@@ -1,0 +1,247 @@
+%abs {
+	position: absolute;
+	z-index: 5;
+}
+
+%abs-pseudo {
+	position: absolute;
+	top: 0;
+	display: block;
+	content: ' ';
+}
+
+%anim {
+    .is-loaded & {
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+%animfix {
+	-webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+%antialias {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+%arrow-down {
+	margin-left: 10px;
+	font-size: em(8);
+
+	&:before {
+		color: inherit;
+	}
+}
+
+%abs-x {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+%abs-y {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+%abs-xy {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+%btn {
+    @extend %anim;
+    display: inline-flex;
+    @extend %flex-xy;
+    @extend %rel;
+    @extend %lead--3;
+    height: 68px;
+    white-space: nowrap;
+    padding: 0 90px;
+    border-radius: 20px 0;
+    font: {
+        family: $text;
+        weight: $medium;
+    }
+    color: $c-black-01;
+    cursor: pointer;
+}
+
+%clear {
+	clear: both;
+	
+	&:after {
+		clear: both;
+		display: block;
+		content: '';
+	}
+}
+
+%flex {
+    display: flex;
+}
+
+%flex-column {
+    flex-direction: column;
+}
+
+%flex-inline {
+    display: inline-flex;
+}
+
+%flex-shrink {
+    flex-shrink: 0;
+}
+
+%flex-x {
+	justify-content: center;
+}
+
+%flex-y {
+	align-items: center;
+}
+
+%flex-spacebetween {
+	justify-content: space-between;
+}
+
+%flex-end {
+    align-items: flex-end;
+}
+
+%flex-wrap {
+    flex-wrap: wrap;
+}
+
+%flex-xy {
+	justify-content: center;
+	align-items: center;
+}
+
+%lead {
+    font-family: $text;
+    
+    &--1 {
+        line-height: 1.4em;
+        font-size: rem(42);
+        
+        @media ( max-width: $base + 280px ) {
+        	@include responsive-font(base(42), rem(36));
+        }
+    }
+    
+    &--2 {
+        line-height: 1.4em;
+        font-size: rem(37);
+        
+        @media ( max-width: $base + 280px ) {
+        	@include responsive-font(base(37), rem(20));
+        }
+    }
+    
+    &--3 {
+        line-height: 1.5em;
+        font-size: rem(22);
+        
+        @media ( max-width: $base + 280px ) {
+        	@include responsive-font(base(22), rem(18));
+        }
+    }
+    
+    &--4 {
+        font-size: rem(20);
+        
+        @media ( max-width: $base + 280px ) {
+        	@include responsive-font(base(20), rem(16));
+        }
+    }
+}
+
+%rel {
+	position: relative;
+	z-index: 1;
+}
+
+%ulink {
+    @extend %rel;
+    display: inline-block;
+    
+    &:after, &:before {
+        @extend %abs;
+        @extend %abs-pseudo;
+        left: 0;
+        width: 100%;
+        transform: scale3d(0, 1, 1);
+        opacity: .5;
+    }
+
+    &:before {
+        bottom: 0;
+        height: 1px;
+        transform-origin: right center;
+        transition: transform;
+        transition-duration: .5s;
+        transition-timing-function: cubic-bezier(.77,0, .175, 1);
+    }
+
+    &:after {
+        top: 0;
+    	height: 100%;
+    }
+
+    &:hover {
+        //.desktop & {
+            &:before {                
+                transform: scale3d(1, 1, 1);
+                transform-origin: left center;
+            }
+        //}
+    }
+}
+
+%wrap {
+    width: $base + 280px;
+	margin: 0 auto;	
+	padding: {
+    	left: 140px;
+    	right: 140px;
+	}
+
+	@media ( max-width: $base + 280px ) {
+	    width: 100%;
+	    padding: {
+        	left: grid(140);
+        	right: grid(140);
+    	}
+	}
+	
+	@media ( max-width: $tablet + px ) {
+        padding: {
+        	left: 20px;
+        	right: 20px;
+    	}
+    }
+    
+    @media ( max-width: $smartphone_portrait + px ) {
+        padding: {
+        	left: 15px;
+        	right: 15px;
+    	}
+    }
+}
+
+%wrap--narrow {
+    width: $base--narrow + 280px;
+
+	@media ( max-width: $base--narrow + 280px ) {
+	    width: 100%;
+	    padding: {
+        	left: grid(140);
+        	right: grid(140);
+    	}
+	}	
+}

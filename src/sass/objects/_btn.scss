@@ -1,0 +1,26 @@
+.o-btn {
+    @extend %btn;
+   
+    &--red {
+        @extend %lead--3;
+        background-color: $c-red-01;
+        color: white;
+    }
+    
+    span {
+        width: 100%;
+	}
+}
+
+a.o-btn,
+button.o-btn {
+//    .desktop & {
+    
+        &:hover {
+	        
+        	background-color: var(--primary-color);
+        	color: white;
+        	
+        }
+//    }
+}

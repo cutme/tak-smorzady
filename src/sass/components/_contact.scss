@@ -1,0 +1,39 @@
+.c-contact {
+    .o-cols {
+        padding-bottom: 60px;
+
+        &__item {
+            &:first-of-type {
+                width: 33.33333%;
+            }
+            
+            &:last-of-type {
+                @extend %flex;
+                width: 66.66667%;
+                
+                @media ( max-width: 1440px ) {
+                	flex-wrap: wrap;
+                }
+                
+                address {
+                    margin-bottom: 40px;
+                    padding: 0 20px;
+                    
+                    @media ( max-width: 1440px ) {
+                        width: 50%;
+                    }
+                    
+                    p {
+                        @extend %lead--3;
+                    }
+                    
+                    a {
+                        white-space: nowrap;
+                        font-weight: $light;
+                    }
+                }
+            }
+        }
+    }
+    
+}

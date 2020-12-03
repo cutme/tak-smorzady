@@ -1,0 +1,37 @@
+.c-news {
+    
+    figure {
+        p {
+            margin-bottom: 1em;
+        }
+    }
+    
+    &__items {
+         .home & {
+            background-color: $c-red-02;
+            padding-bottom: 100px;
+        }
+    }
+    
+    .o-header {
+         .home & {
+            background-color: $c-gray-02;
+            padding-top: 40px;
+            padding-bottom: 240px;
+        }
+    }
+    
+    .o-cols {
+        &__item {
+            .home & {
+                margin-top: -200px;
+            }
+        }
+    }
+    
+    .o-box {
+        .home & {
+           color: white;
+        }
+    }
+}

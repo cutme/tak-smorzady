@@ -1,0 +1,44 @@
+.c-newsletter {
+    background-color: $c-gray-02;
+
+    .o-cols {
+        &__item {
+            &:last-of-type {
+                @extend %rel;
+                flex: 1;
+
+                img {
+                    @extend %abs;
+                    top: 70px;
+                    transform: translateY(-80%);
+                    max-width: 100%;
+                    right: 0;
+                }
+                
+            }
+        }
+    }
+
+    .o-header {
+        margin-bottom: 50px;
+
+        p {
+            max-width: 480px;
+        }
+    }
+    
+    .form {
+        @extend %flex;
+        
+        input[type=text] {
+            width: 540px;
+            margin-right: 35px;
+        }
+        
+        button {
+            @extend %btn;
+            background-color: $c-red-01;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+
+.is-hidden {
+    display: none;
+}
+
+
+
+// Text
+
+.aligncenter {
+    text-align: center;
+}
+
+.color-primary {
+    color: var(--primary-color);
+}
+
+.u-cover {
+    transition: all 500ms ease-out;
+    opacity: 1;
+    
+    .is-loaded & {
+        opacity: 0;
+    }
+}
+
+
+// Backgrounds
+
+.bg-gray {
+    background-color: $c-gray-02;
+}
+
+.bg-red {
+    background-color: $c-red-02;
+}
+
+.bg-white {
+    background-color: white;
+    color: $c-red-01;
+}
+
+.text-red {
+    color: $c-red-01;
+}
+
+.text-white {
+    color: white;
+    
+    .o-header {
+        h2 {
+            border-bottom-color: white;
+        }
+    }
+}

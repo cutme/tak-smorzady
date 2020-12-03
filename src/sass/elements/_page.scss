@@ -1,0 +1,18 @@
+body {
+	width: 100%;
+	background-color: white;
+	
+    &:not(.home) {
+        padding-top: 150px;
+    
+        @media ( max-width: $base + 280px ) {
+    		padding-top: base(150);
+    	}
+    }
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+

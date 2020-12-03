@@ -1,0 +1,73 @@
+.c-download {
+    
+    .o-download {
+        li {
+            margin-bottom: 20px;
+            
+            @media ( max-width: $base + 280px ) {
+            	margin-bottom: base(20);
+            }
+        }
+
+        a {
+            @extend %flex;
+            @extend %rel;
+            background-color: $c-red-01;
+            padding: 25px 80px 25px 60px;
+            line-height: 1.5em;
+            font: {
+                size: rem(25);
+                weight: $semibold;
+            }
+            
+            @media ( max-width: $base + 280px ) {
+            	@include responsive-font(base(25), rem(20));
+            	padding: base(25) 80px base(25) base(60);
+            }
+
+            &:after {
+                @extend %abs-pseudo;
+                @extend %abs-y;
+                right: 40px;
+                font: {
+                    family: $icomoon;
+                    size: rem(50);
+                    weight: $light;
+                }
+                content: "\e902";
+                
+                @media ( max-width: $base + 280px ) {
+                    @include responsive-font(base(50), rem(30));
+                    right: base(40);
+                }
+            }
+        }
+    }
+    
+    
+    .bg-gray {
+        .o-download {
+            a {
+                background-color: $c-red-02;
+                color: white;
+                
+                &:after {
+                    color: $c-red-01;
+                }
+
+            }
+        }
+    }
+    
+    .bg-red {
+        .o-download {
+            a {                
+                &:after {
+                    color: $c-red-02;
+                }
+
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,11 @@
+.o-article {
+    p {
+//        line-height: 30px;
+
+    }
+    
+    &--2cols {
+        column-count: 2;
+        column-gap: 40px;
+    }
+}

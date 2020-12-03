@@ -1,0 +1,76 @@
+.c-carousel {
+    background-color: $c-red-02;
+    padding: 90px 45px 20px 45px;
+    
+    @media ( max-width: $base + 280px ) {
+        padding: base(90) base(45) base(20) base(45);
+    }
+
+    .o-box {
+        background-color: white;
+        padding: 35px;
+        
+        @media ( max-width: $base + 280px ) {
+            @include responsive-padding(base(35), rem(15));
+        }
+
+        time {
+            margin: 0;
+        }
+    }
+    
+    .swiper-container {
+        max-width: calc(1780px + 50px);
+        margin: 0 auto;
+    }
+    
+    .swiper-nav {
+        @extend %flex;
+        justify-content: center;
+        padding: 50px 0;
+        
+        @media ( max-width: $base + 280px ) {
+            padding: base(50) 0;
+        }
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: relative;
+        width: 108.64px; height: 48.8px;
+        left: auto;
+        right: auto;
+        top: auto;
+        margin: 0 140px;
+        
+        @media ( max-width: $base + 280px ) {
+            width: base(108.64);
+            margin: 0 base(140);
+        }
+        
+        &:before {
+            font-family: $icomoon;
+            font-size: rem(50);
+            color: $c-red-01;
+            content: "\e901";
+            
+            @media ( max-width: $base + 280px ) {
+                @include responsive-font(base(50), rem(24));
+            }
+        }
+    }
+    
+    .swiper-button-next {
+        &:before {
+            transform: scaleX(-1);
+        }
+    }
+    
+    .swiper-slide {
+        padding: 0 25px;
+        
+        @media ( max-width: $base + 280px ) {
+            @include responsive-padding(base(25), rem(15));
+        }
+    }
+}

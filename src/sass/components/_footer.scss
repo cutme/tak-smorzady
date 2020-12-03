@@ -1,0 +1,90 @@
+.c-footer {
+    background-color: $c-red-01;
+    padding: {
+        top: 140px;
+        bottom: 70px;
+    }
+    color: $c-red-02;
+
+    @media ( max-width: $base + 280px ) {
+        padding: {
+            top: base(140);
+            bottom: base(70);
+        }
+    }
+    
+    a {
+        color: white;
+        
+        &:hover {
+            .desktop & {
+                color: $c-red-02;
+            }
+        }
+    }
+    
+    .o-download {
+        a {
+            @extend %rel;
+            display: block;
+            margin-bottom: 30px;
+            padding-left: 60px;
+            line-height: 1.6em;
+            
+            @media ( max-width: $base + 280px ) {
+                @include responsive-padding-left(base(60), rem(35));
+            }
+            
+            &:before {
+                @extend %abs-pseudo;
+                left: 0; top: 0;
+                line-height: 1;
+                font: {
+                    family: $icomoon;
+                    size: rem(56);
+                    weight: $light;
+                }
+                content: "\e902";
+                color: $c-red-02;
+                
+                @media ( max-width: $base + 280px ) {
+                    @include responsive-font(base(56), rem(30));
+                }
+            }
+        }
+    }
+    
+    .o-wrap {
+        & > .o-cols {
+            & > .o-cols__item {
+                &:first-of-type {
+                    width: 490px;
+                    margin-right: 100px;
+                    
+                    @media ( max-width: $base + 280px ) {
+                        width: base(490);
+                        margin-right: base(100);
+                    }
+                }
+                
+                &:last-of-type {
+                    flex: 1;
+                    
+                    .o-row {
+                        &:last-of-type {
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    .o-row {
+        border-bottom: 1px solid $c-red-02;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+    }
+}
+

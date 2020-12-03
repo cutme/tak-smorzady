@@ -1,0 +1,30 @@
+.c-accordion {
+    .o-accordion {
+        h4 {
+            background-color: $c-red-01;
+            padding: 10px 60px;
+            font-size: rem(35);
+            color: white;
+            
+            @media ( max-width: $base + 280px ) {
+            	@include responsive-font(base(35), rem(24));
+            }
+        }
+        
+        li {
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 0 0 50px 0;
+            
+            p {
+                @extend %lead--3;
+                font-weight: $medium;
+            }
+        }
+    }
+}
