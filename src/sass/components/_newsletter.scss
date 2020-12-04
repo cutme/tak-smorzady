@@ -69,6 +69,10 @@
             @media ( max-width: $tablet_portrait + px ) {
                 width: 50%;
             }
+            
+            @media ( max-width: $smartphone_portrait + px ) {
+            	width: 100%;
+            }
         }
         
         button {

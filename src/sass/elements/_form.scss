@@ -76,6 +76,10 @@ input[type=url] {
     background-color: white;
     padding: 0 35px;
     font-family: $text;
+    
+    @media ( max-width: $base + 280px ) {
+        @include responsive-padding-left(base(35), rem(15));
+    }
 
     .is-loaded & {
         @extend %anim;
