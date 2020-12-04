@@ -3,40 +3,36 @@
     @extend %anim;
     @extend %flex;
     @extend %flex-xy;
-    @extend %rel;
-    width: 19px; height: 16px;
-    border-top: 3px solid var(--primary-color);
-	cursor: pointer;
-	
-	@media screen and ( min-width: $tablet + 1px ) {
-        display: none;
-    }
+    width: 32px; height: 15px;
+	cursor: pointer;	
+
+	i {
+    	position: absolute;
+    	left: 0; top: -12px; z-index: -1;
+    	display: block;
+    	width: 100%; height: calc(100% + 12px);
+	}
 
     &:after, &:before {
         @extend %abs;
         @extend %abs-pseudo;
         @extend %anim;
-        width: 100%; 
+        width: 23px;
         height: 3px;
-        background-color: var(--primary-color);
     }
  
     &:after {
-	    left: 0;
-	    transform-origin: right;
-        top: 100%;
-        width: 12px;
+        top: calc(100% - 3px);
     }
 
     &:before {
-        transform-origin: left;
-        top: calc(50% - 2px);
+        top: calc(-100% + 3px);
     }
-
+    
     &:hover {
-        //.desktop & {
-            border-color: var(--primary-color);
-        //}
+        &:after, &:before {
+            width: 100%;
+        }
     }
 
     &.is-active {

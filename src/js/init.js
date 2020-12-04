@@ -4,11 +4,12 @@ document.addEventListener('DOMContentLoaded',function() {
     
     const init = function() {
         document.documentElement.removeAttribute('style');
-        document.documentElement.classList.add('is-loaded');
+        
         
         setTimeout(function() {
             cover.remove();
             window.anims();
+            document.documentElement.classList.add('is-loaded');
         }, 250);
         
         document.getElementsByClassName('js-carousel')[0] ? window.carousel() : false;        	    

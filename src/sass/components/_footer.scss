@@ -33,6 +33,12 @@
             
             @media ( max-width: $base + 280px ) {
                 @include responsive-padding-left(base(60), rem(35));
+                @include responsive-margin-bottom(base(30), rem(5));
+            }
+            
+            @media ( max-width: $small + px ) {
+            	font-size: rem(12);
+            	line-height: 1.2em;
             }
             
             &:before {
@@ -52,6 +58,14 @@
                 }
             }
         }
+        
+        .o-cols {
+            &__item {
+                @media ( max-width: $tablet + px ) {
+                	width: 50%;
+                }
+            }
+        }
     }
     
     .o-wrap {
@@ -65,10 +79,23 @@
                         width: base(490);
                         margin-right: base(100);
                     }
+
+                    @media ( max-width: $tablet + px ) {
+                    	width: 50%;
+                    	margin-right: 0;
+                    }
+                    
+                    @media ( max-width: $tablet_portrait + px ) {
+                    	width: 100%;
+                    }
                 }
                 
                 &:last-of-type {
                     flex: 1;
+                    
+                    @media ( max-width: $tablet + px ) {
+                    	width: 50%;
+                    }
                     
                     .o-row {
                         &:last-of-type {

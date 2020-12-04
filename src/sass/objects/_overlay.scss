@@ -1,0 +1,17 @@
+.o-overlay {
+    @include z-index(overlay);
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba($c-black-01, .5);
+    pointer-events: none;
+    opacity: 0;
+    
+    .is-loaded & {
+        transition: all 0.9s;
+    }
+    
+    &.is-visible {
+        opacity: 1;
+    }
+}

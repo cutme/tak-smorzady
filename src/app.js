@@ -5,6 +5,7 @@ require('./js/anims.js');
 require('./js/carousels.js');
 require('./js/init.js');
 require('./js/ismobile.js');
+require('./js/nav.js');
 require('./js/polyfills.js');
 
 /*

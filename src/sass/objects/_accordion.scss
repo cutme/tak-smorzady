@@ -11,6 +11,12 @@
             
             section {
                 padding: 20px 60px;
+                
+                @media ( max-width: $base + 280px ) {
+                	@include responsive-font(base(35), rem(16));
+                	@include responsive-padding-left(base(60), rem(20));
+                	@include responsive-padding-right(base(60), rem(20));
+                }
             }
         }
         
@@ -21,7 +27,7 @@
                 @extend %abs;
                 @extend %abs-y;
                 @extend %anim;
-                right: 50px; 
+                right: 5%;
                 line-height: 1;
                 font: {
                     family: $icomoon;
@@ -29,6 +35,10 @@
                 }
                 content: "\e900";
                 color: $c-red-02;
+                
+                @media ( max-width: $base + 280px ) {
+                	@include responsive-font(base(30), rem(16));
+                }
             }
         }
         
@@ -48,9 +58,5 @@
             }
         }
     }
-    
-    
-
-
 }
 

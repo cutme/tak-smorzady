@@ -7,13 +7,19 @@
             color: white;
             
             @media ( max-width: $base + 280px ) {
-            	@include responsive-font(base(35), rem(24));
+            	@include responsive-font(base(35), rem(16));
+            	@include responsive-padding-left(base(60), rem(20));
+            	@include responsive-padding-right(base(60), rem(20));
             }
         }
         
         li {
             &:not(:last-child) {
                 margin-bottom: 20px;
+                
+                @media ( max-width: $base + 280px ) {
+                	@include responsive-margin-bottom(base(20), rem(10));
+                }
             }
         }
         

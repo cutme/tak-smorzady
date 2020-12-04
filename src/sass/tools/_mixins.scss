@@ -72,6 +72,29 @@ $prefixes: ("-webkit-","-moz-", "-o-", "");
     }
 }
 
+@mixin responsive-border-width($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    border-width: calc(#{$min} + 0.01rem);
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      border-width: $max;
+    }
+  }
+
+  @if $fallback {
+    border-width: $fallback;
+  }
+
+    border-width: calc(#{$responsive} + 0.1rem);
+}
 
 @mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
   $responsive-unitless: $responsive / ($responsive - $responsive + 1);
@@ -98,7 +121,6 @@ $prefixes: ("-webkit-","-moz-", "-o-", "");
     font-size: calc(#{$responsive} + 0.1rem);
 }
 
-
 @mixin responsive-padding($responsive, $min, $max: false, $fallback: false) {
   $responsive-unitless: $responsive / ($responsive - $responsive + 1);
   $dimension: if(unit($responsive) == 'vh', 'height', 'width');
@@ -124,28 +146,171 @@ $prefixes: ("-webkit-","-moz-", "-o-", "");
     padding: calc(#{$responsive} + 0.1rem);
 }
 
-@mixin responsive-padding-left($responsive, $min, $max: false, $fallback: false) {
-  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
-  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
-  $min-breakpoint: $min / $responsive-unitless * 100;
-
-  @media (max-#{$dimension}: #{$min-breakpoint}) {
-    padding-left: calc(#{$min} + 0.01rem);
-  }
-
-  @if $max {
-    $max-breakpoint: $max / $responsive-unitless * 100;
-
-    @media (min-#{$dimension}: #{$max-breakpoint}) {
-      padding-left: $max;
+@mixin responsive-margin-bottom($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        margin-bottom: calc(#{$min} + 0.01rem);
     }
-  }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            margin-bottom: $max;
+        }
+    }
+    
+    @if $fallback {
+        margin-bottom: $fallback;
+    }
 
-  @if $fallback {
-    padding-left: $fallback;
-  }
+    margin-bottom: calc(#{$responsive} + 0.1rem);
+}
 
-//  font-size: $responsive;
+@mixin responsive-margin-top($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        margin-top: calc(#{$min} + 0.01rem);
+    }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            margin-top: $max;
+        }
+    }
+    
+    @if $fallback {
+        margin-top: $fallback;
+    }
+
+    margin-top: calc(#{$responsive} + 0.1rem);
+}
+
+@mixin responsive-padding-left($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        padding-left: calc(#{$min} + 0.01rem);
+    }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            padding-left: $max;
+        }
+    }
+    
+    @if $fallback {
+        padding-left: $fallback;
+    }
+
     padding-left: calc(#{$responsive} + 0.1rem);
+}
+
+@mixin responsive-padding-right($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        padding-right: calc(#{$min} + 0.01rem);
+    }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            padding-right: $max;
+        }
+    }
+    
+    @if $fallback {
+        padding-right: $fallback;
+    }
+
+    padding-right: calc(#{$responsive} + 0.1rem);
+}
+
+@mixin responsive-padding-top($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        padding-top: calc(#{$min} + 0.01rem);
+    }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            padding-top: $max;
+        }
+    }
+    
+    @if $fallback {
+        padding-top: $fallback;
+    }
+
+    padding-top: calc(#{$responsive} + 0.1rem);
+}
+
+@mixin responsive-padding-bottom($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        padding-bottom: calc(#{$min} + 0.01rem);
+    }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            padding-bottom: $max;
+        }
+    }
+    
+    @if $fallback {
+        padding-bottom: $fallback;
+    }
+
+    padding-bottom: calc(#{$responsive} + 0.1rem);
+}
+
+@mixin responsive-width($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+    $min-breakpoint: $min / $responsive-unitless * 100;
+    
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+        width: calc(#{$min} + 0.01rem);
+    }
+    
+    @if $max {
+        $max-breakpoint: $max / $responsive-unitless * 100;
+    
+        @media (min-#{$dimension}: #{$max-breakpoint}) {
+            width: $max;
+        }
+    }
+    
+    @if $fallback {
+        width: $fallback;
+    }
+
+    width: calc(#{$responsive} + 0.1rem);
 }
 

@@ -4,9 +4,9 @@ body {
 	
     &:not(.home) {
         padding-top: 150px;
-    
-        @media ( max-width: $base + 280px ) {
-    		padding-top: base(150);
+    	
+    	@media ( max-width: $base + 280px ) {
+    		@include responsive-padding-top(base(150), rem(100));
     	}
     }
 }

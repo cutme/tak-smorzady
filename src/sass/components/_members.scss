@@ -1,14 +1,24 @@
 .c-members {
     
     figure {
-        width: 228px;
+        max-width: 228px;
         margin-bottom: 40px;
+        
+        @media ( max-width: $base + 280px ) {
+            @include responsive-margin-bottom(base(40), rem(20));
+        }
         
         img {
             border: 4px solid $c-red-01;
             border-radius: 50%;
             margin: 0 auto 20px auto;
             padding: 8px;
+            
+            @media ( max-width: $base + 280px ) {
+                @include responsive-border-width(base(4), rem(2));
+                @include responsive-padding(base(8), rem(4));
+                @include responsive-margin-bottom(base(20), rem(5));
+            }
         }
     }
     
@@ -17,6 +27,10 @@
 
         p {
             @extend %lead--4;
+            
+            @media ( max-width: $tablet + px ) {
+	            line-height: 1.6em;
+            }
             
             & + p {
                 font-weight: $light;

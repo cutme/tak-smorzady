@@ -10,6 +10,10 @@
          .home & {
             background-color: $c-red-02;
             padding-bottom: 100px;
+            
+            @media ( max-width: $base + 280px ) {
+                @include responsive-padding-bottom(base(100), rem(50));
+            }
         }
     }
     
@@ -18,6 +22,10 @@
             background-color: $c-gray-02;
             padding-top: 40px;
             padding-bottom: 240px;
+            
+            @media ( max-width: $base + 280px ) {
+                @include responsive-padding-bottom(base(240), rem(100));
+            }
         }
     }
     
@@ -25,6 +33,28 @@
         &__item {
             .home & {
                 margin-top: -200px;
+                
+                @media ( max-width: $base + 280px ) {
+                    @include responsive-margin-top(base(-200), rem(-60));
+                }
+                
+                &:nth-of-type(1) {
+                    @media ( max-width: $smartphone_portrait + px ) {
+                        margin-bottom: 90px;
+                    }                    
+                }
+
+                &:nth-of-type(2) {
+                    @media ( max-width: $smartphone_portrait + px ) {
+                        margin-bottom: 30px;
+                    }
+                }
+                
+                &:nth-of-type(3) {
+                    @media ( max-width: $tablet_portrait + px ) {
+                        margin: 0;
+                    }
+                }
             }
         }
     }

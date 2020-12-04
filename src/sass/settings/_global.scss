@@ -19,11 +19,13 @@ $extrabold:         800;
 
 
 $z-index: (
-    hamburger:      100,
+    hamburger:      10,
     header:         30,
-	top           : 40,
+	top           : 30,
 	nav           : 50,
-	logo          : 60
+	logo          : 10,
+	overlay       : 40,
+	cookies       : 60,
 );
 
 // Paths
@@ -40,10 +42,15 @@ $base-font-size:	16;
 $base:              1640;
 $base--narrow:      1220;
 
+// Paddings
+$tablet_portrait_padding:       48;
+
 
 // RWD
 
+$navtop:               1200;
 $tablet:               1024;
 $tablet_portrait:       768;
 $smartphone:			640;
 $smartphone_portrait:	500;
+$small:	                375;

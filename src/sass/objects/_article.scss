@@ -5,7 +5,9 @@
     }
     
     &--2cols {
-        column-count: 2;
-        column-gap: 40px;
+        @media ( min-width: $tablet + 1px ) {
+            column-count: 2;
+            column-gap: 40px;            	
+        }
     }
 }

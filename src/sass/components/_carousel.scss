@@ -11,7 +11,7 @@
         padding: 35px;
         
         @media ( max-width: $base + 280px ) {
-            @include responsive-padding(base(35), rem(15));
+            @include responsive-padding(base(35), rem(10));
         }
 
         time {
@@ -68,9 +68,9 @@
     
     .swiper-slide {
         padding: 0 25px;
-        
+
         @media ( max-width: $base + 280px ) {
-            @include responsive-padding(base(25), rem(15));
+            @include responsive-padding(base(25), rem(10));
         }
     }
 }

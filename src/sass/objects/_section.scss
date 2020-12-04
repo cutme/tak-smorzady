@@ -3,4 +3,9 @@
         top: 90px;
         bottom: 90px;
     }
+    
+    @media ( max-width: $base + 280px ) {
+        @include responsive-padding-top(base(90), rem(40));
+        @include responsive-padding-bottom(base(90), rem(40));
+    }
 }

@@ -11,12 +11,25 @@
                 top: base(30);
                 bottom: base(30);
             }
+            
+            @media ( max-width: $base + 280px ) {
+                @include responsive-padding-top(base(30), rem(10));
+                @include responsive-padding-bottom(base(30), rem(10));
+            }
+        }
+        
+        @media ( max-width: $tablet + px ) {
+        	line-height: 1.6em;
         }
     }
     
     h2 {
         @extend %lead--2;
         margin-bottom: .25em;
+        
+        @media ( max-width: $base + 280px ) {
+        	@include responsive-font(base(37), rem(20));
+        }
     }
     
     time {

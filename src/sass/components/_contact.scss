@@ -5,6 +5,11 @@
         &__item {
             &:first-of-type {
                 width: 33.33333%;
+                
+                @media ( max-width: $smartphone + px ) {
+                	width: 100%;
+                	text-align: center;
+                }
             }
             
             &:last-of-type {
@@ -15,12 +20,21 @@
                 	flex-wrap: wrap;
                 }
                 
+                @media ( max-width: $smartphone + px ) {
+                	width: 100%;
+                	text-align: center;
+                }
+                
                 address {
                     margin-bottom: 40px;
                     padding: 0 20px;
                     
                     @media ( max-width: 1440px ) {
                         width: 50%;
+                    }
+                    
+                    @media ( max-width: $smartphone_portrait + px ) {
+                    	width: 100%;
                     }
                     
                     p {
@@ -36,4 +50,9 @@
         }
     }
     
+    .o-header {
+        @media ( max-width: $smartphone + px ) {
+            margin-bottom: 20px;
+        }
+    }
 }

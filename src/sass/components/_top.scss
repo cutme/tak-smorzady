@@ -11,6 +11,30 @@
         min-height: 100px;
     }
     
+    .o-hamburger {
+    	@extend %flex;
+    	@extend %rel;
+    	margin: 0 0 0 auto;
+        box-shadow: inset 0 3px 0 0 $c-red-01;
+        
+        @media ( min-width: $navtop + 1px ) {
+    		display: none;
+    	}
+
+        &:before, &:after {
+            right: 0;
+        }
+
+        &:after {
+            transform-origin: right;
+            border-bottom: 3px solid $c-red-01;
+        }
+    
+        &:before {
+            border-top: 3px solid $c-red-01;
+        }    	
+    }
+    
     .o-logo {
         height: 100%;
 
@@ -37,6 +61,10 @@
         @media ( max-width: $base + 280px ) {
         	@include responsive-font(base(43), rem(26));
         	margin-left: base(30);
+        }
+        
+        @media ( max-width: $navtop + px ) {
+        	display: none;
         }
     }
 }

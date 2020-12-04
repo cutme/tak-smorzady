@@ -1,0 +1,18 @@
+/*
+.c-whoweare {
+    .o-cols {
+        &__item {
+           &:last-of-type {
+               @extend %flex;               
+           }
+        }
+    }
+    
+    .o-wrap {
+        @media ( max-width: $tablet_portrait + px ) {
+        	display: flex;
+        	flex-direction: column;
+        }
+    }
+}
+*/

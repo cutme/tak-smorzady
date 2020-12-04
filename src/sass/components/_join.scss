@@ -1,0 +1,24 @@
+.c-join {
+    .o-cols {
+        &__item {
+            @media ( max-width: $tablet_portrait + px ) {
+            	width: 100% !important;
+            }
+
+            &:first-of-type {
+                @media ( max-width: $tablet_portrait + px ) {
+                    margin-bottom: 4em;
+                }
+            }
+            
+            &:last-of-type {
+                img {
+                    @media ( max-width: $tablet_portrait + px ) {
+                        max-width: 80%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}

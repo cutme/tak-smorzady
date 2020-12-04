@@ -1,113 +1,49 @@
-const bodyScrollLock = require('body-scroll-lock');
-const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-
 document.addEventListener('DOMContentLoaded',function() {
 
-    const el = document.getElementsByClassName('js-nav')[0],
-          nav = document.getElementsByClassName('js-children'),
-          menu = document.getElementsByClassName('js-menu')[0],
-          hamburger = document.getElementsByClassName('js-hamburger')[0],
-          parent = el.getElementsByTagName('li');
+    const nav = document.getElementsByClassName('js-nav')[0],
+          hamburger = document.getElementsByClassName('js-hamburger'),
+          overlay = document.getElementsByClassName('js-overlay')[0];
+          
+        console.log(overlay);
 
     const init = function() {
 
-        let ww = 0;
-        
-/*
-        const searchform = document.getElementById('searchform'),
-        	  searchform__content = document.getElementById('searchform__content');
-*/
-
-        const checkWindowWidth = function() {
-            ww = window.innerWidth;
-
-            if (ww > 1024) {
-
-                hideMenu();
-            }
-        }
-        
         const hideMenu = function() {
-
-            enableBodyScroll(el);
-            el.classList.remove('is-visible');
-            hamburger.classList.remove('is-active');
-
-            for (let i = 0; i < nav.length; i ++) {
-                nav[i].classList.remove('is-active');
-            }
+            nav.classList.remove('is-visible');
             
-            //cutme.Helpers.detach(searchform__content, searchform);
-            //searchform__content.classList.remove('is-visible');
+            document.removeEventListener('click', clickOutside);
             
-            let parent = el.getElementsByClassName('menu-item-has-children');
-            
-            for (let i = 0; i < parent.length; i ++) {
-                parent[i].classList.remove('is-active');
-            }
+            setTimeout(function() {
+                overlay.classList.remove('is-visible');
+            }, 100);
         };
 
-        const showMenu = function(e) {
-        
-            if (e.currentTarget.classList.contains('is-active')) {
+        const showMenu = function() {
+            overlay.classList.add('is-visible');
             
-                hideMenu();            
-            
-            } else {
-            
-                disableBodyScroll(el);
-                el.classList.add('is-visible');
-                hamburger.classList.add('is-active');
-                
-                //cutme.Helpers.detach(searchform__content, el);
-                
-               /*
- setTimeout(function() {
-	                searchform__content.classList.add('is-visible');
-                }, 100);
-*/
-            }
+            setTimeout(function() {
+                nav.classList.add('is-visible');
+                document.addEventListener('click', clickOutside);
+            }, 100);
         };
 
+        const menu = function(e) {
+            nav.classList.contains('is-visible') ? hideMenu() : showMenu();
+        };
         
-
-        window.addEventListener('resize', checkWindowWidth);
-
-        checkWindowWidth();
-
-        hamburger.addEventListener('click', showMenu);
-
-
-        const parent = menu.getElementsByTagName('li');
-
-        const submenu = function(e) {
+        for (let i = 0; i < hamburger.length; i ++) {
+            hamburger[i].addEventListener('click', menu);
+        }
         
-            if (ww <= 1024) {
-                let item = e.currentTarget;
-               
-                e.stopPropagation();
-                
-                if (item.classList.contains('menu-item-has-children')) {
-                    if (item.classList.contains('is-active')) {
-                        item.classList.remove('is-active');
-                    } else {
-                        item.classList.add('is-active');
-                    }
-                } else {
-                    let url = item.getElementsByTagName('a')[0].getAttribute('href');
-                    window.open(url, '_self');
-                    hideMenu();
-                }
+        const clickOutside = function(e) {
+            
+            console.log(e.target.classList);
 
-                e.preventDefault() ? e.preventDefault() : e.preventDefault = false;
-            }
-        }
-
-
-        for (let j = 0; j < parent.length; j++) {
-            parent[j].addEventListener('click', submenu);
-        }
+            if (!e.target.closest('.js-nav')) {
+                hideMenu();
+        	}
+        };
+        
 
 
         // Hide menu on ESC
@@ -127,6 +63,6 @@ document.addEventListener('DOMContentLoaded',function() {
 
     };
 
-    el ? init() : false;
+    nav ? init() : false;
 
 }, false);

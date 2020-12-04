@@ -1,6 +1,6 @@
 body {
 	@include antialias;
-	line-height: 2;
+	line-height: 2em;
 	text-rendering: optimizeSpeed;
 	font: {
 		family: $text;
@@ -8,6 +8,10 @@ body {
 		weight: $medium;
 	}
 	color: $c-red-01;
+	
+	@media ( max-width: $base + 280px ) {
+        @include responsive-font(base(16), rem(14));
+    }
 }
 
 a {
@@ -35,7 +39,7 @@ strong {
 }
 
 ::selection {
-	background-color: var(--primary-color);
+	background-color: $c-red-01;
 	color: white;
 }
 
